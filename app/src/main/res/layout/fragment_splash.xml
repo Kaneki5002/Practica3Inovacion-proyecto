@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context=".splash">
+
+
+
+    <!-- Capa del fondo -->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical" />
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:layout_margin="20dp"
+
+        app:cardCornerRadius="20dp" />
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+
+        android:gravity="center"
+
+        android:background="@color/crema">
+
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:textAlignment="center"
+
+            android:text="OtomíApp"
+
+            android:fontFamily="@font/matcha"
+
+            android:textColor="@color/vino"
+
+            android:textSize="50sp">
+
+
+
+        </TextView>
+
+
+        <ImageView
+
+            android:layout_width="274dp"
+
+            android:layout_height="396dp"
+
+            android:backgroundTint="@color/black"
+
+            android:src="@drawable/captura_de_pantalla_2026_10_26_105038"
+
+            />
+
+
+
+    </LinearLayout>
+
+    <!-- FIN Capa del fondo -->
+
+
+
+    <!-- Capa del frente -->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

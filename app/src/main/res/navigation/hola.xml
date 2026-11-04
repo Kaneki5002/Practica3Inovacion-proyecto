@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hola"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.practica3inovacion.splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_ingresar"
+            app:destination="@id/ingresar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.practica3inovacion.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_login_to_autoReguistro"
+            app:destination="@id/autoReguistro" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/autoReguistro"
+        android:name="com.example.practica3inovacion.AutoReguistration"
+        android:label="fragment_auto_reguistro"
+        tools:layout="@layout/fragment_auto_reguistro" >
+        <action
+            android:id="@+id/action_autoReguistro_to_login"
+            app:destination="@id/login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu2"
+        android:name="com.example.practica3inovacion.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu2_to_producto1"
+            app:destination="@id/producto1" />
+        <action
+            android:id="@+id/action_menu2_to_producto2"
+            app:destination="@id/producto2" />
+        <action
+            android:id="@+id/action_menu2_to_producto3"
+            app:destination="@id/producto3" />
+        <action
+            android:id="@+id/action_menu2_to_numeros"
+            app:destination="@id/numeros" />
+        <action
+            android:id="@+id/action_menu2_to_naturaleza"
+            app:destination="@id/naturaleza" />
+        <action
+            android:id="@+id/action_menu2_to_animales"
+            app:destination="@id/animales" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/producto1"
+        android:name="com.example.practica3inovacion.Producto1"
+        android:label="fragment_producto1"
+        tools:layout="@layout/fragment_producto1" >
+        <action
+            android:id="@+id/action_producto1_to_hola2"
+            app:destination="@id/hola2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/producto2"
+        android:name="com.example.practica3inovacion.Producto2"
+        android:label="fragment_producto2"
+        tools:layout="@layout/fragment_producto2" />
+
+    <fragment
+        android:id="@+id/producto3"
+        android:name="com.example.practica3inovacion.Producto3"
+        android:label="fragment_producto3"
+        tools:layout="@layout/fragment_producto3" />
+
+    <fragment
+        android:id="@+id/numeros"
+        android:name="com.example.practica3inovacion.Numeros"
+        android:label="fragment_numeros"
+        tools:layout="@layout/fragment_numeros" />
+
+    <fragment
+        android:id="@+id/naturaleza"
+        android:name="com.example.practica3inovacion.Naturaleza"
+        android:label="fragment_naturaleza"
+        tools:layout="@layout/fragment_naturaleza" />
+
+    <fragment
+        android:id="@+id/animales"
+        android:name="com.example.practica3inovacion.Animales"
+        android:label="fragment_animales"
+        tools:layout="@layout/fragment_animales" />
+
+    <fragment
+        android:id="@+id/hola2"
+        android:name="com.example.practica3inovacion.hola"
+        android:label="fragment_hola"
+        tools:layout="@layout/fragment_hola" >
+        <action
+            android:id="@+id/action_hola2_to_bienvenidos"
+            app:destination="@id/bienvenidos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bienvenidos"
+        android:name="com.example.practica3inovacion.Bienvenidos"
+        android:label="fragment_bienvenidos"
+        tools:layout="@layout/fragment_bienvenidos" >
+        <action
+            android:id="@+id/action_bienvenidos_to_gracias"
+            app:destination="@id/gracias" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gracias"
+        android:name="com.example.practica3inovacion.gracias"
+        android:label="fragment_gracias"
+        tools:layout="@layout/fragment_gracias" />
+    <fragment
+        android:id="@+id/ingresar"
+        android:name="com.example.practica3inovacion.Ingresar"
+        android:label="fragment_ingresar"
+        tools:layout="@layout/fragment_ingresar" >
+        <action
+            android:id="@+id/action_ingresar_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_ingresar_to_autoReguistro"
+            app:destination="@id/autoReguistro" />
+    </fragment>
+
+</navigation>

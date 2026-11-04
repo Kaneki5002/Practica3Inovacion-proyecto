@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "498632959788",
+    "project_id": "proyecto-integrador-af3b4",
+    "storage_bucket": "proyecto-integrador-af3b4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498632959788:android:c12b53874f9d2854322e89",
+        "android_client_info": {
+          "package_name": "com.example.practica3inovacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBprwR0ZUPhLuIx-ncSAhysuQrsNUp5nAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
