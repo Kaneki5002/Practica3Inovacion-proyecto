@@ -1,64 +1,128 @@
 package com.example.practica3inovacion;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Bienvenidos#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 public class Bienvenidos extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ImageView btnVolver, btnEscucharAudio;
+    private CardView btnGrabar, btnContinuar, btnSiguiente;
 
     public Bienvenidos() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Bienvenidos.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Bienvenidos newInstance(String param1, String param2) {
-        Bienvenidos fragment = new Bienvenidos();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        // Constructor vacío requerido
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_bienvenidos, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        btnVolver = view.findViewById(R.id.btnVolver);
+        btnEscucharAudio = view.findViewById(R.id.btnEscucharAudio);
+        btnGrabar = view.findViewById(R.id.btnGrabar);
+        btnContinuar = view.findViewById(R.id.btnContinuar);
+        btnSiguiente = view.findViewById(R.id.btnSiguiente);
+
+        // 1. Botón Volver -> Regresa a la pantalla anterior ('hola')
+        if (btnVolver != null) {
+            btnVolver.setOnClickListener(v -> {
+                try {
+                    NavController controller = Navigation.findNavController(v);
+                    controller.navigateUp();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+        // 2. Audio de "Hogä ehe"
+        if (btnEscucharAudio != null) {
+            btnEscucharAudio.setOnClickListener(v -> reproducirAudioPronunciacion());
+        }
+
+        // 3. Micrófono
+        if (btnGrabar != null) {
+            btnGrabar.setOnClickListener(v -> {
+                reproducirSonidoBurbuja();
+                if (getContext() != null) {
+                    Toast.makeText(getContext(), "Escuchando pronunciación de Hogä ehe...", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        // 4. Botón Continuar
+        if (btnContinuar != null) {
+            btnContinuar.setOnClickListener(v -> {
+                reproducirSonidoBurbuja();
+                avanzarSiguiente(v);
+            });
+        }
+
+        // 5. Botón Siguiente -> Avanza al paso 3 de la lección
+        if (btnSiguiente != null) {
+            btnSiguiente.setOnClickListener(v -> {
+                reproducirSonidoBurbuja();
+                avanzarSiguiente(v);
+            });
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bienvenidos, container, false);
+    private void avanzarSiguiente(View v) {
+        try {
+            NavController controller = Navigation.findNavController(v);
+            // Reemplaza 'action_bienvenidos_to_gracias' con el ID exacto de tu acción en hola.xml
+            controller.navigate(R.id.action_bienvenidos_to_gracias);
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (getContext() != null) {
+                Toast.makeText(getContext(), "¡Excelente avance!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void reproducirAudioPronunciacion() {
+        try {
+            if (getContext() != null) {
+                MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.burbuja);
+                if (mp != null) {
+                    mp.setOnCompletionListener(MediaPlayer::release);
+                    mp.start();
+                }
+                Toast.makeText(getContext(), "🔊 Hogä ehe (Bienvenidos)", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void reproducirSonidoBurbuja() {
+        try {
+            if (getContext() != null) {
+                MediaPlayer x = MediaPlayer.create(getContext(), R.raw.burbuja);
+                if (x != null) {
+                    x.setOnCompletionListener(MediaPlayer::release);
+                    x.start();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

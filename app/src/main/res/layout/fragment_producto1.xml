@@ -81,7 +81,7 @@
                 android:layout_marginBottom="25dp"
                 android:contentDescription="Ilustración lección"
                 android:scaleType="fitCenter"
-                android:src="@drawable/logotipo_de_android" />
+                android:src="@drawable/captura_de_pantalla_2026_11_05_084256" />
 
             <!-- CONTENIDO DE LA LECCIÓN -->
             <TextView

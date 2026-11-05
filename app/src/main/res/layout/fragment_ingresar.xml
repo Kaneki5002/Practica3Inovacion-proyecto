@@ -10,20 +10,18 @@
     <!-- DECORACIÓN SUPERIOR IZQUIERDA -->
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="135dp"
         android:layout_gravity="top|start"
         android:scaleType="fitStart"
-        android:src="@drawable/apoyo"
-        app:tint="@color/vino" />
+        android:src="@drawable/captura_de_pantalla_2026_11_05_083033" />
 
     <!-- DECORACIÓN SUPERIOR DERECHA -->
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="138dp"
         android:layout_gravity="top|end"
         android:scaleType="fitEnd"
-        android:src="@drawable/apoyo"
-        app:tint="@color/vino" />
+        android:src="@drawable/captura_de_pantalla_2026_11_05_083054" />
 
     <!-- CONTENIDO PRINCIPAL -->
     <LinearLayout
@@ -36,7 +34,6 @@
         android:paddingEnd="30dp"
         android:paddingBottom="20dp">
 
-        <!-- TÍTULO PRINCIPAL -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +43,6 @@
             android:textSize="38sp"
             android:textStyle="bold" />
 
-        <!-- SUBTÍTULO CON FLECHAS -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,18 +53,16 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <!-- ILUSTRACIÓN DEL LOBO / ZORRO TENANGO -->
+        <!-- LOGO ZORRO OTOMÍ -->
         <ImageView
             android:id="@+id/ingresar_imvlogo"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="226dp"
+            android:layout_height="306dp"
             android:layout_marginTop="20dp"
             android:contentDescription="Ilustración Otomí"
             android:scaleType="fitCenter"
-            android:src="@drawable/logotipo_de_android"
-            app:tint="@color/vino" />
+            android:src="@drawable/captura_de_pantalla_2026_10_26_105038" />
 
-        <!-- LEYENDA CENTRAL -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,70 +74,58 @@
             android:textSize="13sp"
             android:textStyle="bold" />
 
-        <!-- ESPACIADOR FLEXIBLE PARA EMPUJAR LOS BOTONES ABAJO -->
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <!-- BOTÓN 1: INICIAR (RELLENO COLOR VINO) -->
+        <!-- BOTÓN 1: INICIAR -->
         <androidx.cardview.widget.CardView
             android:id="@+id/ingresar_crdiniciar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginBottom="15dp"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="@color/vino"
             app:cardCornerRadius="25dp"
             app:cardElevation="0dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/vino"
-                android:gravity="center"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/matcha"
-                    android:text="Iniciar"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/matcha"
+                android:text="Iniciar"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
-        <!-- BOTÓN 2: CREAR CUENTA (CON BORDE COLOR VINO) -->
-        <androidx.cardview.widget.CardView
+        <!-- BOTÓN 2: CREAR CUENTA (CON BORDE VINO) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/ingresar_crdcrearcuenta"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginBottom="25dp"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="#00000000"
             app:cardCornerRadius="25dp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            app:strokeColor="@color/vino"
+            app:strokeWidth="2dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ic_launcher_background"
-                android:gravity="center"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/matcha"
-                    android:text="Crear Cuenta"
-                    android:textColor="@color/vino"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/matcha"
+                android:text="Crear Cuenta"
+                android:textColor="@color/vino"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- TEXTO INFERIOR: REGÍSTRATE -->
         <LinearLayout
@@ -175,13 +157,12 @@
 
     </LinearLayout>
 
-    <!-- BANNER DECORATIVO INFERIOR (CENEFA TENANGO) -->
+    <!-- DECORACIÓN INFERIOR -->
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:layout_gravity="bottom"
         android:scaleType="fitXY"
-        android:src="@drawable/apoyo"
-        app:tint="@color/vino" />
+        android:src="@drawable/captura_de_pantalla_2026_11_05_083124" />
 
 </FrameLayout>

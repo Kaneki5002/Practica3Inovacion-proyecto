@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF8F2"
+    tools:context=".Configuracion">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_bar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ENCABEZADO -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/btnVolver"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:tint="#8C1D40" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/matcha"
+                    android:text="Configuración"
+                    android:textColor="#8C1D40"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!-- 1. NOTIFICACIONES (CON SWITCH) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icNotif" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@android:drawable/ic_popup_reminder" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icNotif" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Notificaciones" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Activar o desactivar avisos" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:checked="true" app:thumbTint="#FFFFFF" app:trackTint="#8C1D40" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 2. SONIDO (CON SWITCH) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icSonido" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@android:drawable/ic_lock_silent_mode_off" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icSonido" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Sonido" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Efectos y pronunciación" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:checked="true" app:thumbTint="#FFFFFF" app:trackTint="#8C1D40" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 3. TEMA -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icTema" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@drawable/logotipo_de_android" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icTema" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Tema" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Color de la aplicación" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:fontFamily="@font/matcha" android:text="Claro  ➔" android:textColor="#666666" android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 4. IDIOMA -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icIdioma" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@drawable/apoyo" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icIdioma" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Idioma" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Idioma de la aplicación" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:fontFamily="@font/matcha" android:text="Español  ➔" android:textColor="#666666" android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 5. PRIVACIDAD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icPriv" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@android:drawable/ic_lock_lock" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icPriv" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Privacidad" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Protección de datos" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 6. AYUDA Y SOPORTE -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icAyuda" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@android:drawable/ic_menu_help" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icAyuda" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Ayuda y soporte" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Preguntas frecuentes" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 7. ACERCA DE -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#FAF8F2"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E0DCD3"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp">
+                    <ImageView android:id="@+id/icAcerca" android:layout_width="26dp" android:layout_height="26dp" android:layout_centerVertical="true" android:src="@android:drawable/ic_menu_info_details" app:tint="#8C1D40" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/icAcerca" android:layout_marginStart="14dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Acerca de" android:textColor="#2D2D2D" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Versión de la app" android:textColor="#777777" android:textSize="11sp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:fontFamily="@font/matcha" android:text="v1.0.0" android:textColor="#666666" android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BARRA INFERIOR FIJA -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FAF8F2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/apoyo" app:tint="#666666"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Inicio" android:textColor="#666666" android:textSize="10sp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/reparar" app:tint="#666666"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Progreso" android:textColor="#666666" android:textSize="10sp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_usuario" app:tint="#8C1D40"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Perfil" android:textColor="#8C1D40" android:textSize="10sp" android:textStyle="bold"/>
+            <View android:layout_width="20dp" android:layout_height="3dp" android:layout_marginTop="2dp" android:background="#8C1D40"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/iphone_x" app:tint="#666666"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/matcha" android:text="Logros" android:textColor="#666666" android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

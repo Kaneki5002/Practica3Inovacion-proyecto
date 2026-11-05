@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -18,9 +20,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.jspecify.annotations.NonNull;
-import org.jspecify.annotations.Nullable;
 
 public class login extends Fragment {
 
@@ -34,7 +33,7 @@ public class login extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
@@ -43,8 +42,12 @@ public class login extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Inicializar referencia a Firebase
-        mDatabase = FirebaseDatabase.getInstance("https://proyecto-integrador-af3b4-default-rtdb.firebaseio.com/").getReference();
+        try {
+            // Inicialización con la URL del Realtime Database
+            mDatabase = FirebaseDatabase.getInstance("https://proyecto-integrador-af3b4-default-rtdb.firebaseio.com/").getReference();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         vincular(view);
         eventos(view);
@@ -74,20 +77,26 @@ public class login extends Fragment {
         String passIngresada = edtPassword != null && edtPassword.getText() != null ? edtPassword.getText().toString().trim() : "";
 
         if (usuarioIngresado.isEmpty() || passIngresada.isEmpty()) {
-            Toast.makeText(getContext(), "Por favor, llena todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Por favor, ingresa tu usuario y contraseña", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String claveUsuario = usuarioIngresado.replace(".", "_").replace("@", "_");
+        if (mDatabase == null) {
+            Toast.makeText(getContext(), "Error de conexión con Firebase", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        // CONSULTAR FIREBASE DATABASE
+        // Sanitización del usuario ingresado para coincidir con el registro
+        String claveUsuario = usuarioIngresado.replace(".", "_").replace("@", "_").replace("#", "_").replace("$", "_");
+
+        // Búsqueda directa en la rama 'usuarios' usando la clave de usuario
         mDatabase.child("usuarios").child(claveUsuario).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     String passReal = snapshot.child("password").getValue(String.class);
                     if (passReal != null && passReal.equals(passIngresada)) {
-                        Toast.makeText(getContext(), "¡Bienvenido!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "¡Bienvenido al sistema!", Toast.LENGTH_SHORT).show();
                         navegarSeguro(rootView, R.id.action_login_to_menu2);
                     } else {
                         Toast.makeText(getContext(), "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
@@ -99,7 +108,7 @@ public class login extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), "Error de lectura en Firebase: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Error en Firebase: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -117,7 +126,7 @@ public class login extends Fragment {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getContext(), "Error al cambiar de pantalla: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Error al navegar: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

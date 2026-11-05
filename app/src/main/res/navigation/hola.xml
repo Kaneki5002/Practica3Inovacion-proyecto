@@ -61,6 +61,12 @@
         <action
             android:id="@+id/action_menu2_to_animales"
             app:destination="@id/animales" />
+        <action
+            android:id="@+id/action_menu2_to_perfil"
+            app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_menu2_to_culturaOtomi"
+            app:destination="@id/culturaOtomi" />
     </fragment>
 
     <fragment
@@ -128,6 +134,7 @@
         android:name="com.example.practica3inovacion.gracias"
         android:label="fragment_gracias"
         tools:layout="@layout/fragment_gracias" />
+
     <fragment
         android:id="@+id/ingresar"
         android:name="com.example.practica3inovacion.Ingresar"
@@ -139,6 +146,219 @@
         <action
             android:id="@+id/action_ingresar_to_autoReguistro"
             app:destination="@id/autoReguistro" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.example.practica3inovacion.Perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil">
+        <action
+            android:id="@+id/action_perfil_to_editarPerfil"
+            app:destination="@id/editarPerfil" />
+        <action
+            android:id="@+id/action_perfil_to_configuracion"
+            app:destination="@id/configuracion" />
+        <action
+            android:id="@+id/action_perfil_to_menu2"
+            app:destination="@id/menu2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarPerfil"
+        android:name="com.example.practica3inovacion.EditarPerfil"
+        android:label="fragment_editar_perfil"
+        tools:layout="@layout/fragment_editar_perfil" />
+
+    <fragment
+        android:id="@+id/configuracion"
+        android:name="com.example.practica3inovacion.Configuracion"
+        android:label="fragment_configuracion"
+        tools:layout="@layout/fragment_configuracion" />
+
+    <fragment
+        android:id="@+id/culturaOtomi"
+        android:name="com.example.practica3inovacion.CulturaOtomi"
+        android:label="fragment_cultura_otomi"
+        tools:layout="@layout/fragment_cultura_otomi">
+        <action
+            android:id="@+id/action_culturaOtomi_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_culturaOtomi_to_perfil"
+            app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_culturaOtomi_to_moduloCultura"
+            app:destination="@id/moduloCultura" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moduloCultura"
+        android:name="com.example.practica3inovacion.ModuloCultura"
+        android:label="fragment_modulo_cultura"
+        tools:layout="@layout/fragment_modulo_cultura">
+        <action
+            android:id="@+id/action_moduloCultura_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_moduloCultura_to_perfil"
+            app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_moduloCultura_to_ixmiquilpan"
+            app:destination="@id/ixmiquilpan" />
+    </fragment>
+
+    <!-- PANTALLA 1: IXMIQUILPAN PRINCIPAL -->
+    <fragment
+        android:id="@+id/ixmiquilpan"
+        android:name="com.example.practica3inovacion.Ixmiquilpan"
+        android:label="fragment_ixmiquilpan"
+        tools:layout="@layout/fragment_ixmiquilpan">
+        <action
+            android:id="@+id/action_ixmiquilpan_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpan_to_perfil"
+            app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_ixmiquilpan_to_ixmiquilpanHistoria"
+            app:destination="@id/ixmiquilpanHistoria" />
+    </fragment>
+
+    <!-- PANTALLA 2: HISTORIA Y LUGARES -->
+    <fragment
+        android:id="@+id/ixmiquilpanHistoria"
+        android:name="com.example.practica3inovacion.IxmiquilpanHistoria"
+        android:label="fragment_ixmiquilpan_historia"
+        tools:layout="@layout/fragment_ixmiquilpan_historia">
+        <action
+            android:id="@+id/action_ixmiquilpanHistoria_to_ixmiquilpanTradiciones"
+            app:destination="@id/ixmiquilpanTradiciones" />
+        <action
+            android:id="@+id/action_ixmiquilpanHistoria_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanHistoria_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 3: TRADICIONES Y COSTUMBRES -->
+    <fragment
+        android:id="@+id/ixmiquilpanTradiciones"
+        android:name="com.example.practica3inovacion.IxmiquilpanTradiciones"
+        android:label="fragment_ixmiquilpan_tradiciones"
+        tools:layout="@layout/fragment_ixmiquilpan_tradiciones">
+        <action
+            android:id="@+id/action_ixmiquilpanTradiciones_to_ixmiquilpanUbicacion"
+            app:destination="@id/ixmiquilpanUbicacion" />
+        <action
+            android:id="@+id/action_ixmiquilpanTradiciones_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanTradiciones_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 4: UBICACIÓN Y NOMBRE -->
+    <fragment
+        android:id="@+id/ixmiquilpanUbicacion"
+        android:name="com.example.practica3inovacion.IxmiquilpanUbicacion"
+        android:label="fragment_ixmiquilpan_ubicacion"
+        tools:layout="@layout/fragment_ixmiquilpan_ubicacion">
+        <action
+            android:id="@+id/action_ixmiquilpanUbicacion_to_ixmiquilpanTrabajo"
+            app:destination="@id/ixmiquilpanTrabajo" />
+        <action
+            android:id="@+id/action_ixmiquilpanUbicacion_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanUbicacion_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 5: TRABAJO COMUNITARIO Y FIESTAS -->
+    <fragment
+        android:id="@+id/ixmiquilpanTrabajo"
+        android:name="com.example.practica3inovacion.IxmiquilpanTrabajo"
+        android:label="fragment_ixmiquilpan_trabajo"
+        tools:layout="@layout/fragment_ixmiquilpan_trabajo">
+        <action
+            android:id="@+id/action_ixmiquilpanTrabajo_to_ixmiquilpanSabores"
+            app:destination="@id/ixmiquilpanSabores" />
+        <action
+            android:id="@+id/action_ixmiquilpanTrabajo_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanTrabajo_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 6: SABORES ANCESTRALES -->
+    <fragment
+        android:id="@+id/ixmiquilpanSabores"
+        android:name="com.example.practica3inovacion.IxmiquilpanSabores"
+        android:label="fragment_ixmiquilpan_sabores"
+        tools:layout="@layout/fragment_ixmiquilpan_sabores">
+        <action
+            android:id="@+id/action_ixmiquilpanSabores_to_ixmiquilpanArteTextil"
+            app:destination="@id/ixmiquilpanArteTextil" />
+        <action
+            android:id="@+id/action_ixmiquilpanSabores_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanSabores_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 7: ARTE TEXTIL Y MANANTIALES -->
+    <fragment
+        android:id="@+id/ixmiquilpanArteTextil"
+        android:name="com.example.practica3inovacion.IxmiquilpanArteTextil"
+        android:label="fragment_ixmiquilpan_arte_textil"
+        tools:layout="@layout/fragment_ixmiquilpan_arte_textil">
+        <action
+            android:id="@+id/action_ixmiquilpanArteTextil_to_ixmiquilpanGaleria1"
+            app:destination="@id/ixmiquilpanGaleria1" />
+        <action
+            android:id="@+id/action_ixmiquilpanArteTextil_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanArteTextil_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 8: GALERÍA 1 -->
+    <fragment
+        android:id="@+id/ixmiquilpanGaleria1"
+        android:name="com.example.practica3inovacion.IxmiquilpanGaleria1"
+        android:label="fragment_ixmiquilpan_galeria1"
+        tools:layout="@layout/fragment_ixmiquilpan_galeria1">
+        <action
+            android:id="@+id/action_ixmiquilpanGaleria1_to_ixmiquilpanGaleria2"
+            app:destination="@id/ixmiquilpanGaleria2" />
+        <action
+            android:id="@+id/action_ixmiquilpanGaleria1_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanGaleria1_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+
+    <!-- PANTALLA 9: GALERÍA 2 (ÚLTIMA PANTALLA - REGRESA A IXMIQUILPAN) -->
+    <fragment
+        android:id="@+id/ixmiquilpanGaleria2"
+        android:name="com.example.practica3inovacion.IxmiquilpanGaleria2"
+        android:label="fragment_ixmiquilpan_galeria2"
+        tools:layout="@layout/fragment_ixmiquilpan_galeria2">
+        <action
+            android:id="@+id/action_ixmiquilpanGaleria2_to_ixmiquilpan"
+            app:destination="@id/ixmiquilpan" />
+        <action
+            android:id="@+id/action_ixmiquilpanGaleria2_to_menu2"
+            app:destination="@id/menu2" />
+        <action
+            android:id="@+id/action_ixmiquilpanGaleria2_to_perfil"
+            app:destination="@id/perfil" />
     </fragment>
 
 </navigation>
